@@ -16,10 +16,11 @@ function App() {
     detail:
       "Scrumptious and chocolaty heaven made of hershy chocolate chips and imported cookie dough from Austria.",
   });
+  const [theme, setTheme] = useState("Light Theme");
 
   return (
-    <div>
-      <Home />
+    <div className={theme}>
+      <Home setTheme={setTheme} theme={theme} />
       <ProductList setCookie={setCookie} />
       <Detail cookie={cookie} />
     </div>
