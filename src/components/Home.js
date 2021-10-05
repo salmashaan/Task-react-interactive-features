@@ -6,11 +6,11 @@ const Home = (props) => {
       <button
         onClick={() =>
           props.setTheme(
-            props.theme === "lighttheme" ? "darktheme" : "lighttheme"
+            props.theme === "darktheme" ? "lighttheme" : "darktheme"
           )
         }
       >
-        {props.theme === "lighttheme" ? "Dark" : "Light"} Theme{" "}
+        {props.theme === "darktheme" ? "Light" : "Dark"} Theme{" "}
       </button>
       <br /> <br />
       <img
