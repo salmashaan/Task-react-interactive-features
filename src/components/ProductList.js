@@ -10,14 +10,18 @@ import products from "../products";
 //   <ProductItem product={product} key={product.id} />
 // ));
 
-const ProductList = () => {
+const ProductList = (props) => {
   const [query, setQuery] = useState("");
 
   let filteredArray = products.filter((product) =>
-    product.name.includes(query)
+    product.name.toLowerCase().includes(query.toLowerCase())
   );
   let mappedArray = filteredArray.map((product) => (
-    <ProductItem product={product} key={product.id} />
+    <ProductItem
+      product={product}
+      setCookie={props.setCookie}
+      key={product.id}
+    />
   ));
 
   return (
